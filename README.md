@@ -6,7 +6,7 @@ This is a simple x86-64 Assembly calculator, written for a Linux kernel
 
 To install and use the program, you must follow those steps:
 1. Download the repository with either the GitHub `Download` button or with typing
-```
+```bash
 git clone https://github.com/fif3x/x86-64LINUXcalculator.git
 ```
 in the terminal
@@ -20,25 +20,25 @@ in the terminal
 Lets break down the program into multiple parts:
 1. `.data` section and its contests:
 In the `.data` section, we store the string for `output` and its length like this:
-```
+```asm
 output db 0, 10 ; space for 1 char and a newline char
 length equ $ - output
 ```
 
 2. Operation selection
 To select an operation, we change the value of the `r14` register in line 25:
-```
+```asm
 mov r14, 1  ; mode (1:add, 2:sub, 3:mul, 4:div)
 ```
 
 3. Printing
 After preforming an operation, we store the result in `r8` and call the `_print` function using
-```
+```asm
 mov r8,  r12      ; store in r8 to print
 call     _print   ; call print function
 ```
 then in the `_print` function we firstly make `r8` an ascii text, add the last byte of `r8b` to `output`, and then also add a new line to the `output`
-```
+```asm
 add r8,      '0'
 mov byte [output],   r8b
 mov byte [output+1], 10
