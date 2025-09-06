@@ -49,7 +49,7 @@ lastly, we call the Linux write function, using the following values:
 `rsi = address of output` to point to it
 `rdx = length of output`
 so the code looks like this:
-```
+```asm
 mov rax,             1              ; syscall: write
 mov rdi,             1              ; stdout
 lea rsi,             [rel output]   ; output address
@@ -59,7 +59,7 @@ ret ; return control
 ```
 4. Ending program
 After completing everything needed, we clear the registers using `xor reg, reg`, which is a bitwise operator making `reg` equal to 0, and we call the syscall for exiting:
-```
+```asm
 ; clear registers
 xor r12, r12
 xor r13, r13
