@@ -11,7 +11,7 @@ git clone https://github.com/fif3x/x86-64LINUXcalculator.git
 ```
 in the terminal
 
-2. Install dependencies with running the [installDependencies.sh](https://github.com/fif3x/x86-64LINUXcalculator/blob/main/installDependencies.sh) script
+2. Install dependencies with running the [installDependencies.sh](https://github.com/fif3x/x86-64LINUXcalculator/blob/main/installDependencies.sh) script _note: it's written for debian-based systems_
 3. Build project with running the [build.sh](https://github.com/fif3x/x86-64LINUXcalculator/blob/main/build.sh) script
 4. Go to `bin/` and open the `.out` file
 
